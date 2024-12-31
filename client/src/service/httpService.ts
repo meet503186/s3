@@ -47,11 +47,9 @@ const requests = {
         responseBody(res as IApiResponse<any>)
       )
       .catch(onError),
-  put: (url: string, body: unknown, headers?: any) =>
+  put: (url: string, body: unknown, config?: any) =>
     instance
-      .put(url, body, {
-        headers,
-      })
+      .put(url, body, config)
       .then((res: Partial<IApiResponse<any>>) =>
         responseBody(res as IApiResponse<any>)
       )
